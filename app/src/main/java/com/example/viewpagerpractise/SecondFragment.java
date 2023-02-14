@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 public class SecondFragment extends Fragment {
     private OnSecondFragmentInteractionListener mListener;
     private AppCompatButton secondFragmentButton;
+    private AppCompatButton swipeLeftButton;
+    private AppCompatButton swipeRightButton;
+
 
     public SecondFragment() {
     }
@@ -31,6 +34,22 @@ public class SecondFragment extends Fragment {
                 }
             }
         });
+        swipeLeftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.onSecondFragmentSwipeLeftButtonClicked();
+                }
+            }
+        });
+        swipeRightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.onSecondFragmentSwipeRightButtonClicked();
+                }
+            }
+        });
     }
 
     @Override
@@ -39,6 +58,8 @@ public class SecondFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
 
         secondFragmentButton = view.findViewById(R.id.second_fragment_button);
+        swipeLeftButton = view.findViewById(R.id.swipe_left_second_fragment_button);
+        swipeRightButton = view.findViewById(R.id.swipe_right_second_fragment_button);
 
         settingOnClickListeners();
 
@@ -47,6 +68,8 @@ public class SecondFragment extends Fragment {
 
     public interface OnSecondFragmentInteractionListener {
         void onSecondFragmentButtonClicked();
+        void onSecondFragmentSwipeLeftButtonClicked();
+        void onSecondFragmentSwipeRightButtonClicked();
     }
 
     @Override

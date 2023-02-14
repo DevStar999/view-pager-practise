@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.OnF
     }
 
     @Override
+    public void onSecondFragmentSwipeLeftButtonClicked() {
+        viewPager2.setCurrentItem(0, true);
+    }
+
+    @Override
+    public void onSecondFragmentSwipeRightButtonClicked() {
+        viewPager2.setCurrentItem(2, true);
+    }
+
+    @Override
     public void onThirdFragmentButtonClicked() {
         Toast.makeText(this, "Third Fragment Button Clicked", Toast.LENGTH_LONG).show();
     }

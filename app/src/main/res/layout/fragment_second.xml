@@ -25,9 +25,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Second Fragment Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/change_page_buttons_second_fragment_linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/second_fragment_title_text_view" />
+
+    <LinearLayout
+        android:id="@+id/change_page_buttons_second_fragment_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_fragment_button">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/swipe_left_second_fragment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Swipe Left" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/swipe_right_second_fragment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Swipe Right" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

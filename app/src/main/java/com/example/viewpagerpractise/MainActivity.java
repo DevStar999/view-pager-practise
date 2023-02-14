@@ -27,6 +27,16 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.OnF
 
         viewPager2.setAdapter(pagerAdapter);
         viewPager2.setPageTransformer(new ZoomOutPageTransformer());
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                String pageName = "";
+                if (position == 0) { pageName = "First Fragment"; }
+                else if (position == 1) { pageName = "Second Fragment"; }
+                else if (position == 2) { pageName = "Third Fragment"; }
+                Toast.makeText(MainActivity.this, "ViewPager2 changed page to -> " + pageName, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override

@@ -7,6 +7,7 @@
     tools:context=".SecondFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/second_fragment_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Second Fragment"
@@ -14,9 +15,19 @@
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/second_fragment_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/second_fragment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Fragment Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_fragment_title_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
